@@ -6,9 +6,13 @@
            </div>
      </div>
 <div >
-      <HcodeSectionBanner/>
-      <HcodeSectionNews/>
-      <HcodeInput/>
+     
+      
+  <component :is="currentComponent"></component>
+     
+      
+         
+        
        
         <div class="container">
 
@@ -28,7 +32,7 @@
 
 <script>
  import HcodeSectionBanner from './HcodeSectionBanner' 
- import HcodeSectionNews from './HcodeSectionNews'
+ import HcodeSectionNews from './HcodeSectionNews' 
  import HcodeInput from './HcodeInput'
 
 
@@ -41,11 +45,13 @@ export default {
     },
     data(){
         return {
-            myClub: 'Hcode Treinamentos'
+            myClub: 'Hcode Treinamentos',
+            
         }
     },
       props:{
-          championship: String
+          championship: String,
+           currentComponent: String
       }
 }
 </script>

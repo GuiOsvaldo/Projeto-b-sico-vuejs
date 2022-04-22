@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<div class  id="app">  
+  <HcodeHeader @select-championship="changeChampionship" />
+  <HcodeSection :championship="championship" />
+   <HcodeFooter/>
+ </div>
+ </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import HcodeHeader from './components/HcodeHeader'
+import HcodeFooter from './components/HcodeFooter'
+import HcodeSection from './components/HcodeSection'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+     HcodeHeader,
+     HcodeFooter,
+     HcodeSection
+  },
+    data(){
+      return{
+        championship: 'Campeonato Brasileiro'
+      }
+    },
+    methods: {
+      changeChampionship(value){
+             this.championship = value;
+      }
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap')
 </style>
